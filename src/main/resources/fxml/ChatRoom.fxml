@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <!-- Header Section -->
+   <top>
+      <VBox style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0">
+               <children>
+                  <Button fx:id="backBtn" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/images/back-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <Label fx:id="roomNameLabel" text="Operation Sunrise">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Label fx:id="roomStatusLabel" text="active" textFill="#22c55e">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="membersCountLabel" text="4 members">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                             <textFill>
+                                                <Color blue="0.5" green="0.5" red="0.5" />
+                                             </textFill>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox spacing="12.0">
+                     <children>
+                        <Button fx:id="callBtn" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #1e40af; -fx-text-fill: white;" text="📞 Call">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="mapBtn" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #1e40af; -fx-text-fill: #1e40af;" text="🗺️ Map">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </padding>
+            </HBox>
+
+            <!-- Active Call Banner -->
+            <HBox fx:id="callBannerHBox" alignment="CENTER_LEFT" prefHeight="50.0" spacing="15.0" style="-fx-background-color: #dc2626; -fx-background-radius: 8px;" styleClass="call-banner">
+               <children>
+                  <Circle fill="WHITE" radius="8.0" />
+                  <VBox>
+                     <children>
+                        <Label text="Group Call Active" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="callDurationLabel" text="Duration: 00:00" textFill="WHITE">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="endCallBtn" prefHeight="35.0" style="-fx-background-color: white; -fx-text-fill: #dc2626;" text="End Call" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+               <visible>false</visible>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+
+   <!-- Main Content Area -->
+   <center>
+      <HBox>
+         <children>
+            <!-- Chat Area -->
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <!-- Messages Area -->
+                  <ScrollPane fx:id="messagesScrollPane" fitToHeight="true" fitToWidth="true" style="-fx-background-color: #f8fafc;">
+                     <content>
+                        <VBox fx:id="messagesVBox" spacing="15.0">
+                           <padding>
+                              <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <!-- Messages will be added dynamically -->
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+
+                  <!-- Message Input Area -->
+                  <VBox style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, -2);">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                           <children>
+                              <!-- File Upload Buttons -->
+                              <HBox spacing="8.0">
+                                 <children>
+                                    <Button fx:id="imageUploadBtn" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: transparent; -fx-border-color: #d1d5db; -fx-border-radius: 8px;">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="/images/image-icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="videoUploadBtn" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: transparent; -fx-border-color: #d1d5db; -fx-border-radius: 8px;">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="/images/video-icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="fileUploadBtn" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: transparent; -fx-border-color: #d1d5db; -fx-border-radius: 8px;">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="/images/attach-icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+
+                              <!-- Message Input -->
+                              <TextField fx:id="messageInputField" prefHeight="40.0" promptText="Type your message..." HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+
+                              <!-- Voice Message Button -->
+                              <Button fx:id="voiceBtn" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: transparent; -fx-border-color: #d1d5db; -fx-border-radius: 8px;">
+                                 <graphic>
+                                    <ImageView fx:id="voiceIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="/images/mic-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+
+                              <!-- Send Button -->
+                              <Button fx:id="sendBtn" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #1e40af; -fx-text-fill: white; -fx-border-radius: 8px;">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="/images/send-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
+                           </padding>
+                        </HBox>
+
+                        <!-- Recording Indicator -->
+                        <HBox fx:id="recordingIndicatorHBox" alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #fef2f2; -fx-background-radius: 8px;">
+                           <children>
+                              <Circle fill="#dc2626" radius="4.0">
+                                 <effect>
+                                    <Glow level="0.8" />
+                                 </effect>
+                              </Circle>
+                              <Label fx:id="recordingLabel" text="Recording... Click mic to stop" textFill="#dc2626">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding>
+                           <visible>false</visible>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+
+            <!-- Right Sidebar -->
+            <VBox prefWidth="320.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), -5, 0, 0, 2);">
+               <children>
+                  <TabPane fx:id="sidebarTabPane" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <!-- Participants Tab -->
+                        <Tab text="Participants">
+                           <content>
+                              <VBox spacing="15.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="Room Members">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox fx:id="participantsVBox" spacing="10.0">
+                                       <children>
+                                          <!-- Participants will be added dynamically -->
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+
+                        <!-- Files Tab -->
+                        <Tab text="Files">
+                           <content>
+                              <VBox spacing="15.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox spacing="10.0">
+                                       <children>
+                                          <Label text="Uploaded Files">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <VBox fx:id="filesVBox" spacing="8.0">
+                                             <children>
+                                                <!-- Files will be added dynamically -->
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

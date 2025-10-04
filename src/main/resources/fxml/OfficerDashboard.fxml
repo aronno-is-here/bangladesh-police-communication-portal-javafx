@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <!-- Left Sidebar -->
+   <left>
+      <VBox fx:id="sidebarVBox" prefWidth="280.0" style="-fx-background-color: #1e293b;">
+         <children>
+            <!-- Header Section -->
+            <VBox spacing="15.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="15.0">
+                     <children>
+                        <Circle fill="#1e40af" radius="25.0" />
+                        <VBox>
+                           <children>
+                              <Label text="BD Police Portal">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <textFill>
+                                    <Color blue="1.0" green="1.0" red="1.0" />
+                                 </textFill>
+                              </Label>
+                              <Label fx:id="userRoleLabel" text="Police Officer">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <textFill>
+                                    <Color blue="0.7" green="0.7" red="0.7" />
+                                 </textFill>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="12.0">
+                     <children>
+                        <Circle fx:id="userAvatarCircle" fill="#1e40af" radius="20.0" />
+                        <VBox>
+                           <children>
+                              <Label fx:id="userNameLabel" text="Officer Rahman">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <textFill>
+                                    <Color blue="1.0" green="1.0" red="1.0" />
+                                 </textFill>
+                              </Label>
+                              <Label fx:id="userPoliceIdLabel" text="ID: BD001">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                                 <textFill>
+                                    <Color blue="0.6" green="0.6" red="0.6" />
+                                 </textFill>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+
+            <!-- Navigation Menu -->
+            <VBox spacing="8.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+               <children>
+                  <Button fx:id="homeBtn" maxWidth="1.7976931348623157E308" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: #e5e7eb; -fx-alignment: center-left;" text="🏠 Dashboard">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="chatRoomsBtn" maxWidth="1.7976931348623157E308" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: #e5e7eb; -fx-alignment: center-left;" text="💬 My Chat Rooms">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="recordsBtn" maxWidth="1.7976931348623157E308" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: #e5e7eb; -fx-alignment: center-left;" text="🗂️ Criminal Records">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="mapBtn" maxWidth="1.7976931348623157E308" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: #e5e7eb; -fx-alignment: center-left;" text="🗺️ Map Tracking">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+
+            <!-- Status Section -->
+            <VBox VBox.vgrow="ALWAYS">
+               <children>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <HBox alignment="CENTER" spacing="8.0" style="-fx-background-color: rgba(34, 197, 94, 0.2);">
+                     <children>
+                        <Circle fill="#22c55e" radius="4.0" />
+                        <Label text="On Duty" textFill="#22c55e">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                     </padding>
+                  </HBox>
+                  <Button fx:id="logoutBtn" maxWidth="1.7976931348623157E308" prefHeight="45.0" style="-fx-background-color: #dc2626; -fx-text-fill: white; -fx-alignment: center-left;">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                  </padding>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+
+   <!-- Main Content Area -->
+   <center>
+      <VBox fx:id="mainContentVBox">
+         <children>
+            <!-- Header Bar -->
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+               <children>
+                  <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="pageTitleLabel" text="Dashboard">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+
+            <!-- Content Area -->
+            <ScrollPane fx:id="contentScrollPane" fitToHeight="true" fitToWidth="true" style="-fx-background-color: #f8fafc;">
+               <content>
+                  <VBox fx:id="contentVBox" spacing="25.0">
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                     <children>
+                        <!-- Welcome Section -->
+                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 12px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);">
+                           <children>
+                              <padding>
+                                 <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+                              </padding>
+                              <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                 <children>
+                                    <Circle fx:id="welcomeAvatarCircle" fill="#1e40af" radius="30.0" />
+                                    <VBox>
+                                       <children>
+                                          <Label fx:id="welcomeLabel" text="Welcome back, Officer Rahman!">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Your assigned missions and communications">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <textFill>
+                                                <Color blue="0.5" green="0.5" red="0.5" />
+                                             </textFill>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+
+                        <!-- Quick Stats -->
+                        <HBox spacing="20.0">
+                           <children>
+                              <Card fx:id="activeMissionsCard" prefHeight="140.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox spacing="15.0">
+                                       <padding>
+                                          <Insets bottom="20.0" left="25.0" right="25.0" top="25.0" />
+                                       </padding>
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                             <children>
+                                                <Circle fill="#1e40af" radius="20.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Active Missions">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="activeMissionsValueLabel" text="2">
+                                                         <font>
+                                                            <Font name="System Bold" size="28.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Requires attention" textFill="#1e40af">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </Card>
+                              <Card fx:id="filesUploadedCard" prefHeight="140.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox spacing="15.0">
+                                       <padding>
+                                          <Insets bottom="20.0" left="25.0" right="25.0" top="25.0" />
+                                       </padding>
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                             <children>
+                                                <Circle fill="#22c55e" radius="20.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Files Uploaded">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="filesUploadedValueLabel" text="8">
+                                                         <font>
+                                                            <Font name="System Bold" size="28.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="This week" textFill="#22c55e">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </Card>
+                              <Card fx:id="teamMembersCard" prefHeight="140.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox spacing="15.0">
+                                       <padding>
+                                          <Insets bottom="20.0" left="25.0" right="25.0" top="25.0" />
+                                       </padding>
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                             <children>
+                                                <Circle fill="#8b5cf6" radius="20.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Team Members">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="teamMembersValueLabel" text="12">
+                                                         <font>
+                                                            <Font name="System Bold" size="28.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="In your missions" textFill="#8b5cf6">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </Card>
+                           </children>
+                        </HBox>
+
+                        <!-- Assigned Missions Section -->
+                        <Card fx:id="assignedMissionsCard" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);">
+                           <children>
+                              <VBox spacing="20.0">
+                                 <padding>
+                                    <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox spacing="8.0">
+                                       <children>
+                                          <Label text="My Assigned Missions">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Click on a mission to access the communication room">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <textFill>
+                                                <Color blue="0.5" green="0.5" red="0.5" />
+                                             </textFill>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="missionsListVBox" spacing="15.0">
+                                       <children>
+                                          <!-- Mission items will be added dynamically -->
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Card>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

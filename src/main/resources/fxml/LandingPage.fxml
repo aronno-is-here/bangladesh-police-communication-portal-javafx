@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Header Section -->
+      <VBox alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom right, #1e3a8a, #1e40af, #1e293b);">
+         <children>
+            <VBox alignment="CENTER" spacing="20.0">
+               <padding>
+                  <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+               </padding>
+               <StackPane>
+                  <children>
+                     <Circle fill="WHITE" opacity="0.1" radius="60.0" />
+                     <VBox alignment="CENTER">
+                        <children>
+                           <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="/images/police-badge.png" />
+                              </image>
+                           </ImageView>
+                        </children>
+                     </VBox>
+                  </children>
+               </StackPane>
+               <VBox alignment="CENTER" spacing="10.0">
+                  <children>
+                     <Label fx:id="titleLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Bangladesh Police">
+                        <font>
+                           <Font name="System Bold" size="36.0" />
+                        </font>
+                        <textFill>
+                           <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                              <stops>
+                                 <Stop color="WHITE" />
+                                 <Stop color="#e0e7ff" offset="1.0" />
+                              </stops>
+                           </RadialGradient>
+                        </textFill>
+                     </Label>
+                     <Label fx:id="subtitleLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Station Portal">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                        <textFill>
+                           <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                              <stops>
+                                 <Stop color="#93c5fd" />
+                                 <Stop color="#60a5fa" offset="1.0" />
+                              </stops>
+                           </RadialGradient>
+                        </textFill>
+                     </Label>
+                     <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Secure Communication & Records System">
+                        <font>
+                           <Font size="14.0" />
+                        </font>
+                        <textFill>
+                           <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                              <stops>
+                                 <Stop color="#bfdbfe" />
+                                 <Stop color="#93c5fd" offset="1.0" />
+                              </stops>
+                           </RadialGradient>
+                        </textFill>
+                     </Label>
+                  </children>
+               </VBox>
+            </VBox>
+         </children>
+      </VBox>
+
+      <!-- Login Section -->
+      <VBox alignment="CENTER" spacing="30.0" style="-fx-background-color: white;">
+         <children>
+            <padding>
+               <Insets bottom="60.0" left="60.0" right="60.0" top="40.0" />
+            </padding>
+            <VBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Card fx:id="loginCard" style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-background-radius: 16px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 20, 0, 0, 8);">
+                     <children>
+                        <TabPane fx:id="loginTabPane" prefHeight="500.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <!-- Admin Login Tab -->
+                              <Tab text="Administrator">
+                                 <content>
+                                    <VBox spacing="20.0">
+                                       <padding>
+                                          <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                                       </padding>
+                                       <children>
+                                          <VBox alignment="CENTER" spacing="15.0">
+                                             <children>
+                                                <Label text="Administrator Access">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Sign in with your administrator credentials">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <textFill>
+                                                      <Color blue="0.6" green="0.4" red="0.4" />
+                                                   </textFill>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="20.0">
+                                             <children>
+                                                <VBox spacing="8.0">
+                                                   <children>
+                                                      <Label text="Username">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                         <children>
+                                                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="/images/user-icon.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <TextField fx:id="adminUsernameField" prefHeight="40.0" promptText="Enter username" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox spacing="8.0">
+                                                   <children>
+                                                      <Label text="Password">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                         <children>
+                                                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="/images/lock-icon.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <PasswordField fx:id="adminPasswordField" prefHeight="40.0" promptText="Enter password" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="adminLoginBtn" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="45.0" style="-fx-background-color: #1e40af; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Sign In as Administrator" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </Tab>
+
+                              <!-- Officer Login Tab -->
+                              <Tab text="Police Officer">
+                                 <content>
+                                    <VBox spacing="20.0">
+                                       <padding>
+                                          <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                                       </padding>
+                                       <children>
+                                          <VBox alignment="CENTER" spacing="15.0">
+                                             <children>
+                                                <Label text="Officer Access">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Sign in with your police credentials">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <textFill>
+                                                      <Color blue="0.6" green="0.4" red="0.4" />
+                                                   </textFill>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="20.0">
+                                             <children>
+                                                <VBox spacing="8.0">
+                                                   <children>
+                                                      <Label text="Police ID">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                         <children>
+                                                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="/images/shield-icon.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <TextField fx:id="officerPoliceIdField" prefHeight="40.0" promptText="Enter Police ID" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox spacing="8.0">
+                                                   <children>
+                                                      <Label text="Password">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                         <children>
+                                                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="/images/lock-icon.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <PasswordField fx:id="officerPasswordField" prefHeight="40.0" promptText="Enter password" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <Button fx:id="officerLoginBtn" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="45.0" style="-fx-background-color: #1e40af; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Sign In as Officer" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </Card>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+
+      <!-- Footer Section -->
+      <VBox alignment="CENTER" style="-fx-background-color: #1e293b;">
+         <children>
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Label text="© 2025 Bangladesh Police. All rights reserved.">
+                     <textFill>
+                        <Color blue="0.8" green="0.8" red="0.8" />
+                     </textFill>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="20.0" />
+                  <Label text="Secure • Professional • Efficient">
+                     <textFill>
+                        <Color blue="0.8" green="0.8" red="0.8" />
+                     </textFill>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
