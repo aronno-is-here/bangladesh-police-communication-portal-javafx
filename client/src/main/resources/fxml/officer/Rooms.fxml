@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" spacing="12" fx:controller="com.bdpolice.station.client.controllers.OfficerRoomsController">
+  <children>
+    <Label text="My Chat Rooms" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: 700;" />
+    <TableView fx:id="roomsTable" VBox.vgrow="ALWAYS">
+      <columns>
+        <TableColumn text="Room" prefWidth="320" />
+        <TableColumn text="Status" prefWidth="120" />
+        <TableColumn text="Last Activity" prefWidth="160" />
+        <TableColumn text="Participants" prefWidth="120" />
+        <TableColumn text="Join" prefWidth="120" />
+      </columns>
+    </TableView>
+  </children>
+</VBox>

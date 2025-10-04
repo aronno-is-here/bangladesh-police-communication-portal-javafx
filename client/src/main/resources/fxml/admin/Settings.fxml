@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" spacing="12">
+  <children>
+    <Label text="Settings" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: 700;" />
+    <TitledPane text="System Configuration" expanded="true">
+      <content>
+        <VBox spacing="8" styleClass="card">
+          <children>
+            <Label text="Coming soon..." styleClass="label" />
+          </children>
+        </VBox>
+      </content>
+    </TitledPane>
+  </children>
+</VBox>

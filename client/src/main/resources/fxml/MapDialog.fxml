@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.WebView?>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bdpolice.station.client.controllers.MapDialogController">
+  <top>
+    <HBox spacing="8" padding="8" styleClass="card">
+      <children>
+        <Label text="Live Operations Map" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: 700;" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="Lock" onAction="#lockMap" styleClass="button-outline" />
+      </children>
+    </HBox>
+  </top>
+  <center>
+    <StackPane>
+      <children>
+        <WebView fx:id="webView" />
+      </children>
+    </StackPane>
+  </center>
+</BorderPane>

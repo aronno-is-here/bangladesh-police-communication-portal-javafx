@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" spacing="12">
+  <children>
+    <Label text="Admin Dashboard" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: 700;" />
+    <HBox spacing="12">
+      <children>
+        <VBox styleClass="card" spacing="8" prefWidth="240">
+          <children>
+            <Label text="Active Rooms" styleClass="label" />
+            <Label text="12" style="-fx-text-fill: white; -fx-font-size: 28; -fx-font-weight: 800;" />
+            <Label text="+2 from yesterday" styleClass="label" />
+          </children>
+        </VBox>
+        <VBox styleClass="card" spacing="8" prefWidth="240">
+          <children>
+            <Label text="Total Officers" styleClass="label" />
+            <Label text="45" style="-fx-text-fill: white; -fx-font-size: 28; -fx-font-weight: 800;" />
+            <Label text="3 online now" styleClass="label" />
+          </children>
+        </VBox>
+        <VBox styleClass="card" spacing="8" prefWidth="240">
+          <children>
+            <Label text="Pending Reports" styleClass="label" />
+            <Label text="8" style="-fx-text-fill: white; -fx-font-size: 28; -fx-font-weight: 800;" />
+            <Label text="Needs attention" styleClass="label" />
+          </children>
+        </VBox>
+        <VBox styleClass="card" spacing="8" prefWidth="240">
+          <children>
+            <Label text="Completed" styleClass="label" />
+            <Label text="156" style="-fx-text-fill: white; -fx-font-size: 28; -fx-font-weight: 800;" />
+            <Label text="This month" styleClass="label" />
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+
+    <HBox spacing="12">
+      <children>
+        <VBox styleClass="card" spacing="10" VBox.vgrow="ALWAYS" prefWidth="600">
+          <children>
+            <Label text="Create New Chat Room" styleClass="label" />
+            <TextField promptText="Enter room name" />
+            <HBox spacing="8">
+              <children>
+                <Button text="Create Room" styleClass="button-primary" />
+                <Button text="Add Officers" styleClass="button-outline" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox styleClass="card" spacing="10" VBox.vgrow="ALWAYS" prefWidth="600">
+          <children>
+            <Label text="Recent Activity" styleClass="label" />
+            <ListView />
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+  </children>
+</VBox>

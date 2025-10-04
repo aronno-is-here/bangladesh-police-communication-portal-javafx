@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" spacing="12">
+  <children>
+    <Label text="Files (Admin)" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: 700;" />
+    <HBox spacing="8">
+      <children>
+        <TextField promptText="Search rooms by name" HBox.hgrow="ALWAYS" />
+        <ChoiceBox><items><FXCollections fx:factory="observableArrayList"><String fx:value="All"/><String fx:value="Active"/><String fx:value="Completed"/></FXCollections></items></ChoiceBox>
+      </children>
+    </HBox>
+    <TableView VBox.vgrow="ALWAYS">
+      <columns>
+        <TableColumn text="Room" prefWidth="240" />
+        <TableColumn text="Status" prefWidth="120" />
+        <TableColumn text="Files" prefWidth="120" />
+        <TableColumn text="Action" prefWidth="160" />
+      </columns>
+    </TableView>
+  </children>
+</VBox>

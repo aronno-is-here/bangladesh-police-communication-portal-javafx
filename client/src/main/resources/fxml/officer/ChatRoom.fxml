@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bdpolice.station.client.controllers.ChatRoomController">
+  <top>
+    <HBox spacing="8" padding="8" styleClass="card">
+      <children>
+        <Button text="← Back" onAction="#goBack" styleClass="button-outline" />
+        <Label fx:id="roomTitle" text="Operation Name" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: 700;" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="Call" onAction="#toggleCall" styleClass="button-outline" />
+        <Button text="Map" onAction="#openMap" styleClass="button-outline" />
+      </children>
+    </HBox>
+  </top>
+  <center>
+    <SplitPane dividerPositions="0.7">
+      <items>
+        <VBox spacing="6" style="-fx-background-color: transparent;">
+          <children>
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+              <content>
+                <VBox fx:id="messagesBox" spacing="8" padding="8" />
+              </content>
+            </ScrollPane>
+            <HBox spacing="6" padding="8" styleClass="card">
+              <children>
+                <Button text="Image" onAction="#attachImage" styleClass="button-outline" />
+                <Button text="Video" onAction="#attachVideo" styleClass="button-outline" />
+                <Button text="File" onAction="#attachFile" styleClass="button-outline" />
+                <TextField fx:id="messageField" promptText="Type your message..." HBox.hgrow="ALWAYS" />
+                <Button text="🎙" onAction="#toggleRecord" styleClass="button-outline" />
+                <Button text="Send" onAction="#sendMessage" styleClass="button-primary" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <TabPane>
+          <tabs>
+            <Tab text="Participants">
+              <content>
+                <ListView fx:id="participantsList" />
+              </content>
+            </Tab>
+            <Tab text="Files">
+              <content>
+                <VBox spacing="8" padding="8">
+                  <children>
+                    <Button text="Verify Identity" onAction="#verifyFilesAccess" styleClass="button-primary" />
+                    <ListView fx:id="filesList" />
+                  </children>
+                </VBox>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </items>
+    </SplitPane>
+  </center>
+</BorderPane>
