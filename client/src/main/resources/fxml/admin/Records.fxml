@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" spacing="12" fx:controller="com.bdpolice.station.client.controllers.RecordsController">
+  <children>
+    <Label text="Criminal Records" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: 700;" />
+    <HBox spacing="8">
+      <children>
+        <TextField fx:id="searchField" promptText="Name, ID, or Location..." HBox.hgrow="ALWAYS" />
+        <ChoiceBox fx:id="genderChoice">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="All"/>
+              <String fx:value="Male"/>
+              <String fx:value="Female"/>
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <ChoiceBox fx:id="statusChoice">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="All"/>
+              <String fx:value="Active"/>
+              <String fx:value="Under Investigation"/>
+              <String fx:value="Resolved"/>
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <Button text="Clear Filters" onAction="#clearFilters" styleClass="button-outline" />
+      </children>
+    </HBox>
+    <TableView fx:id="recordsTable" VBox.vgrow="ALWAYS">
+      <columns>
+        <TableColumn text="Photo" prefWidth="80" />
+        <TableColumn text="Name" prefWidth="200" />
+        <TableColumn text="ID" prefWidth="160" />
+        <TableColumn text="Details" prefWidth="400" />
+      </columns>
+    </TableView>
+  </children>
+</VBox>

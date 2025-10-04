@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" spacing="12">
+  <children>
+    <Label text="Officer Dashboard" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: 700;" />
+    <HBox spacing="12">
+      <children>
+        <VBox styleClass="card" spacing="8" prefWidth="320">
+          <children>
+            <Label text="Active Missions" styleClass="label" />
+            <Label text="2" style="-fx-text-fill: white; -fx-font-size: 28; -fx-font-weight: 800;" />
+            <Label text="Requires attention" styleClass="label" />
+          </children>
+        </VBox>
+        <VBox styleClass="card" spacing="8" prefWidth="320">
+          <children>
+            <Label text="Files Uploaded" styleClass="label" />
+            <Label text="8" style="-fx-text-fill: white; -fx-font-size: 28; -fx-font-weight: 800;" />
+            <Label text="This week" styleClass="label" />
+          </children>
+        </VBox>
+        <VBox styleClass="card" spacing="8" prefWidth="320">
+          <children>
+            <Label text="Team Members" styleClass="label" />
+            <Label text="12" style="-fx-text-fill: white; -fx-font-size: 28; -fx-font-weight: 800;" />
+            <Label text="In your missions" styleClass="label" />
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+
+    <VBox styleClass="card" spacing="8">
+      <children>
+        <Label text="My Assigned Missions" styleClass="label" />
+        <ListView />
+      </children>
+    </VBox>
+  </children>
+</VBox>

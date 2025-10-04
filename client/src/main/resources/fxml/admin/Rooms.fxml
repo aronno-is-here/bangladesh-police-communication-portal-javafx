@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" spacing="12" fx:controller="com.bdpolice.station.client.controllers.RoomsController">
+  <children>
+    <HBox alignment="CENTER_LEFT" spacing="8">
+      <children>
+        <Label text="Chat Room Management" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: 700;" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="Create Room" onAction="#openCreateDialog" styleClass="button-primary" />
+      </children>
+    </HBox>
+    <HBox spacing="8">
+      <children>
+        <TextField fx:id="searchField" promptText="Search rooms..." HBox.hgrow="ALWAYS" />
+      </children>
+    </HBox>
+    <TableView fx:id="roomsTable" VBox.vgrow="ALWAYS">
+      <columns>
+        <TableColumn text="Name" prefWidth="240" />
+        <TableColumn text="Status" prefWidth="120" />
+        <TableColumn text="Participants" prefWidth="120" />
+        <TableColumn text="Last Activity" prefWidth="160" />
+        <TableColumn text="Actions" prefWidth="240" />
+      </columns>
+    </TableView>
+  </children>
+</VBox>

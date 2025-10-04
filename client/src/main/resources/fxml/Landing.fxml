@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bdpolice.station.client.controllers.LandingController" prefWidth="1500" prefHeight="900" stylesheets="@/css/app.css" >
+  <children>
+    <BorderPane>
+      <center>
+        <VBox alignment="CENTER" spacing="24" >
+          <children>
+            <VBox alignment="CENTER" spacing="8">
+              <children>
+                <StackPane styleClass="card" prefWidth="96" prefHeight="96">
+                  <children>
+                    <Label text="🛡" style="-fx-font-size: 42;" />
+                  </children>
+                </StackPane>
+                <Label text="Bangladesh Police" styleClass="title" />
+                <Label text="Station Portal" styleClass="subtitle" />
+                <Label text="Secure Communication & Records System" styleClass="label" />
+              </children>
+            </VBox>
+
+            <HBox alignment="CENTER" spacing="16">
+              <children>
+                <VBox spacing="10" styleClass="card" prefWidth="420">
+                  <children>
+                    <Label text="Administrator Access" styleClass="label"/>
+                    <TextField fx:id="adminUsername" promptText="Username" />
+                    <PasswordField fx:id="adminPassword" promptText="Password" />
+                    <Button text="Sign In as Administrator" onAction="#onAdminLogin" styleClass="button-primary" maxWidth="Infinity" />
+                  </children>
+                </VBox>
+
+                <VBox spacing="10" styleClass="card" prefWidth="420">
+                  <children>
+                    <Label text="Officer Access" styleClass="label"/>
+                    <TextField fx:id="officerId" promptText="Police ID" />
+                    <PasswordField fx:id="officerPassword" promptText="Password" />
+                    <Button text="Sign In as Officer" onAction="#onOfficerLogin" styleClass="button-primary" maxWidth="Infinity" />
+                  </children>
+                </VBox>
+              </children>
+            </HBox>
+
+            <Label text="© 2025 Bangladesh Police. All rights reserved." styleClass="label" />
+          </children>
+        </VBox>
+      </center>
+    </BorderPane>
+  </children>
+</StackPane>
