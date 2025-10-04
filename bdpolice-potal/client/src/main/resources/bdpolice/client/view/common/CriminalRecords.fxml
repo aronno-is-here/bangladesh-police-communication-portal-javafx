@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" spacing="12" padding="16">
+  <children>
+    <Label text="Criminal Records" styleClass="pageTitle" />
+    <HBox spacing="8">
+      <TextField promptText="Name, ID, or Location..." HBox.hgrow="ALWAYS" />
+      <ChoiceBox>
+        <items><FXCollections fx:factory="observableArrayList"><String fx:value="Gender"/><String fx:value="Male"/><String fx:value="Female"/></FXCollections></items>
+      </ChoiceBox>
+      <ChoiceBox>
+        <items><FXCollections fx:factory="observableArrayList"><String fx:value="Status"/><String fx:value="Active"/><String fx:value="Under Investigation"/><String fx:value="Resolved"/></FXCollections></items>
+      </ChoiceBox>
+      <Button text="Clear Filters" />
+    </HBox>
+    <TableView>
+      <columns>
+        <TableColumn text="Photo" prefWidth="100" />
+        <TableColumn text="Name" prefWidth="200" />
+        <TableColumn text="Age/Gender" prefWidth="140" />
+        <TableColumn text="Hometown" prefWidth="140" />
+        <TableColumn text="National ID" prefWidth="180" />
+        <TableColumn text="Crimes" prefWidth="300" />
+        <TableColumn text="Actions" prefWidth="120" />
+      </columns>
+    </TableView>
+  </children>
+</VBox>
