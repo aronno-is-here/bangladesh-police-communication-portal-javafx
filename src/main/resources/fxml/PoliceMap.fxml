@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Map Header -->
+      <VBox spacing="15.0" style="-fx-background-color: #1e293b;">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/images/map-icon.png" />
+                           </image>
+                        </ImageView>
+                        <VBox>
+                           <children>
+                              <Label text="Live Operations Map">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <textFill>
+                                    <Color blue="1.0" green="1.0" red="1.0" />
+                                 </textFill>
+                              </Label>
+                              <Label fx:id="roomNameLabel" text="Operation Sunrise" textFill="#93c5fd">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Button fx:id="closeBtn" prefHeight="35.0" style="-fx-background-color: #dc2626; -fx-text-fill: white;" text="Close Map" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+
+      <!-- Map Controls -->
+      <HBox alignment="CENTER_LEFT" prefHeight="50.0" spacing="15.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+         <children>
+            <HBox spacing="8.0">
+               <children>
+                  <ToggleButton fx:id="streetMapBtn" prefHeight="35.0" selected="true" style="-fx-background-color: #1e40af; -fx-text-fill: white;" text="Street" toggleGroup="$mapTypeGroup" />
+                  <ToggleButton fx:id="satelliteMapBtn" prefHeight="35.0" style="-fx-background-color: transparent; -fx-border-color: #d1d5db; -fx-text-fill: #6b7280;" text="Satellite" toggleGroup="$mapTypeGroup" />
+                  <ToggleButton fx:id="terrainMapBtn" prefHeight="35.0" style="-fx-background-color: transparent; -fx-border-color: #d1d5db; -fx-text-fill: #6b7280;" text="Terrain" toggleGroup="$mapTypeGroup" />
+               </children>
+            </HBox>
+            <Separator orientation="VERTICAL" prefHeight="30.0" />
+            <HBox spacing="8.0">
+               <children>
+                  <Button fx:id="zoomInBtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: white; -fx-border-color: #d1d5db;">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/images/zoom-in-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="zoomOutBtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: white; -fx-border-color: #d1d5db;">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/images/zoom-out-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="centerMapBtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: white; -fx-border-color: #d1d5db;">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/images/center-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox spacing="8.0">
+               <children>
+                  <Button fx:id="filterBtn" prefHeight="35.0" style="-fx-background-color: transparent; -fx-border-color: #d1d5db; -fx-text-fill: #6b7280;" text="Filter" />
+                  <Button fx:id="settingsBtn" prefHeight="35.0" style="-fx-background-color: transparent; -fx-border-color: #d1d5db; -fx-text-fill: #6b7280;" text="Settings" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </HBox>
+
+      <!-- Main Map Area -->
+      <HBox HBox.hgrow="ALWAYS">
+         <children>
+            <!-- Map Container -->
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <!-- Map Display Area -->
+                  <StackPane fx:id="mapContainer" prefHeight="500.0" style="-fx-background-color: #e5e7eb;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <!-- Map Background -->
+                        <VBox fx:id="mapBackgroundVBox" alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom right, #10b981, #059669, #047857);" HBox.hgrow="ALWAYS">
+                           <children>
+                              <!-- Map Grid -->
+                              <Pane fx:id="mapGridPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgba(255, 255, 255, 0.1);" />
+                           </children>
+                        </VBox>
+
+                        <!-- Officer Markers -->
+                        <VBox fx:id="officerMarkersVBox" alignment="TOP_LEFT" spacing="0.0">
+                           <children>
+                              <!-- Officer markers will be added dynamically -->
+                           </children>
+                        </VBox>
+
+                        <!-- Map Info Panel -->
+                        <VBox fx:id="mapInfoPanel" alignment="TOP_LEFT" spacing="10.0" style="-fx-background-color: rgba(30, 41, 59, 0.9); -fx-background-radius: 8px;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                 <children>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="/images/info-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Operation Status" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <HBox spacing="15.0">
+                                       <children>
+                                          <Label text="Total Officers:" textFill="#93c5fd">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="totalOfficersLabel" text="4" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="15.0">
+                                       <children>
+                                          <Label text="Online:" textFill="#93c5fd">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="onlineOfficersLabel" text="3" textFill="#22c55e">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="15.0">
+                                       <children>
+                                          <Label text="Map Scale:" textFill="#93c5fd">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="mapScaleLabel" text="100%" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+
+            <!-- Officer List Sidebar -->
+            <VBox prefWidth="280.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), -5, 0, 0, 2);">
+               <children>
+                  <!-- Sidebar Header -->
+                  <VBox spacing="12.0" style="-fx-background-color: #f8fafc;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/images/users-icon.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Officer Tracking">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                           <children>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/images/search-icon.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="officerSearchField" prefHeight="35.0" promptText="Search officers..." HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                     </padding>
+                  </VBox>
+
+                  <!-- Officers List -->
+                  <ScrollPane fitToHeight="true" fitToWidth="true">
+                     <content>
+                        <VBox fx:id="officersListVBox" spacing="8.0">
+                           <children>
+                              <!-- Officer items will be added dynamically -->
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

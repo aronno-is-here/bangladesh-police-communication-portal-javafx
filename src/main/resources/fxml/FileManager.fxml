@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Header -->
+      <VBox spacing="15.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0">
+               <children>
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Files Management">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label text="View and manage all uploaded files from chat rooms">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <textFill>
+                              <Color blue="0.5" green="0.5" red="0.5" />
+                           </textFill>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+
+      <!-- Search and Filters Section -->
+      <Card style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);">
+         <children>
+            <VBox spacing="20.0">
+               <padding>
+                  <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+               </padding>
+               <children>
+                  <VBox spacing="8.0">
+                     <children>
+                        <Label text="Search & Filter Files">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox spacing="15.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="/images/search-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="searchField" prefHeight="40.0" promptText="Search files, rooms, or officers..." HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <ComboBox fx:id="roomStatusComboBox" prefHeight="40.0" prefWidth="140.0" promptText="Room Status" />
+                              <ComboBox fx:id="fileTypeComboBox" prefHeight="40.0" prefWidth="120.0" promptText="File Type" />
+                              <Button fx:id="clearFiltersBtn" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-border-color: #d1d5db; -fx-text-fill: #6b7280;" text="Clear Filters" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </Card>
+
+      <!-- Files Grid Section -->
+      <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: #f8fafc;">
+         <content>
+            <VBox fx:id="filesVBox" spacing="20.0">
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="20.0" />
+               </padding>
+               <children>
+                  <!-- Files will be added dynamically -->
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+
+      <!-- No Results Message -->
+      <VBox fx:id="noResultsVBox" alignment="CENTER" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 12px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);" visible="false">
+         <children>
+            <padding>
+               <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+            </padding>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/images/no-files-icon.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="No files found">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="No files found matching your search criteria.">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <textFill>
+                        <Color blue="0.5" green="0.5" red="0.5" />
+                     </textFill>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
