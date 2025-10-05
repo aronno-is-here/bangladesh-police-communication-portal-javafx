@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bdpolice.client.controller.OfficerController"
+            prefWidth="1500" prefHeight="900">
+  <left>
+    <VBox spacing="10" styleClass="sidebar" prefWidth="260">
+      <children>
+        <Label text="BD Police Portal" styleClass="sidebarTitle" />
+        <Separator />
+        <ToggleButton text="Dashboard" selected="true" onAction="#showHome" />
+        <ToggleButton text="My Chat Rooms" onAction="#showRooms" />
+        <ToggleButton text="Criminal Records" onAction="#showRecords" />
+        <Button text="Logout" onAction="#logout" styleClass="dangerButton" />
+      </children>
+      <padding><Insets top="10" left="10" right="10" bottom="10"/></padding>
+    </VBox>
+  </left>
+  <center>
+    <StackPane fx:id="contentRoot" />
+  </center>
+</BorderPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" spacing="16" padding="16">
+  <children>
+    <Label text="Officer Dashboard" styleClass="pageTitle" />
+    <HBox spacing="12">
+      <TitledPane text="Active Missions" expanded="true">
+        <content>
+          <VBox spacing="8" padding="10">
+            <Label text="2" styleClass="statValue" />
+            <Label text="Requires attention" styleClass="muted" />
+          </VBox>
+        </content>
+      </TitledPane>
+      <TitledPane text="Files Uploaded" expanded="true">
+        <content>
+          <VBox spacing="8" padding="10">
+            <Label text="8" styleClass="statValue" />
+            <Label text="This week" styleClass="muted" />
+          </VBox>
+        </content>
+      </TitledPane>
+      <TitledPane text="Team Members" expanded="true">
+        <content>
+          <VBox spacing="8" padding="10">
+            <Label text="12" styleClass="statValue" />
+            <Label text="In your missions" styleClass="muted" />
+          </VBox>
+        </content>
+      </TitledPane>
+    </HBox>
+
+    <TitledPane text="My Assigned Missions" expanded="true">
+      <content>
+        <VBox spacing="8" padding="10">
+          <Button text="Operation Sunrise - Enter Room" />
+          <Button text="Patrol Route 7 - Enter Room" />
+        </VBox>
+      </content>
+    </TitledPane>
+  </children>
+</VBox>

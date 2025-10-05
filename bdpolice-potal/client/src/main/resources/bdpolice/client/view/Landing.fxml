@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bdpolice.client.controller.LandingController"
+            prefWidth="1500" prefHeight="900" styleClass="root">
+  <center>
+    <VBox spacing="20" alignment="CENTER">
+      <children>
+        <VBox spacing="6" alignment="CENTER">
+          <children>
+            <Label text="Bangladesh Police" styleClass="title" />
+            <Label text="Station Portal" styleClass="subtitle" />
+            <Label text="Secure Communication & Records System" styleClass="caption" />
+          </children>
+        </VBox>
+
+        <TabPane prefWidth="520">
+          <tabs>
+            <Tab text="Admin">
+              <content>
+                <VBox spacing="10" padding="20">
+                  <children>
+                    <Label text="Administrator Access" styleClass="sectionTitle" />
+                    <TextField fx:id="adminUsername" promptText="Username" />
+                    <PasswordField fx:id="adminPassword" promptText="Password" />
+                    <Button text="Sign In as Administrator" onAction="#onAdminLogin" styleClass="primaryButton" />
+                  </children>
+                </VBox>
+              </content>
+            </Tab>
+            <Tab text="Officer">
+              <content>
+                <VBox spacing="10" padding="20">
+                  <children>
+                    <Label text="Officer Access" styleClass="sectionTitle" />
+                    <TextField fx:id="officerId" promptText="Police ID" />
+                    <PasswordField fx:id="officerPassword" promptText="Password" />
+                    <Button text="Sign In as Officer" onAction="#onOfficerLogin" styleClass="primaryButton" />
+                  </children>
+                </VBox>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+
+        <Label text="© 2025 Bangladesh Police. All rights reserved." styleClass="footer" />
+      </children>
+    </VBox>
+  </center>
+</BorderPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bdpolice.client.controller.ChatController">
+  <top>
+    <HBox spacing="10" padding="10" styleClass="header">
+      <children>
+        <Button text="Back" onAction="#goBack" />
+        <Label text="Operation Sunrise" styleClass="headerTitle" />
+        <Pane HBox.hgrow="ALWAYS" />
+        <Button text="Call" onAction="#startCall" />
+        <Button text="Map" onAction="#openMap" />
+      </children>
+    </HBox>
+  </top>
+  <center>
+    <VBox spacing="8" padding="8">
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <content>
+          <VBox fx:id="messagesBox" spacing="8" />
+        </content>
+      </ScrollPane>
+      <HBox spacing="6">
+        <Button text="Img" onAction="#uploadImage" />
+        <Button text="Vid" onAction="#uploadVideo" />
+        <Button text="File" onAction="#uploadFile" />
+        <TextField fx:id="messageField" promptText="Type your message..." HBox.hgrow="ALWAYS" />
+        <Button text="Mic" onAction="#toggleRecording" />
+        <Button text="Send" onAction="#sendMessage" />
+      </HBox>
+    </VBox>
+  </center>
+  <right>
+    <TabPane prefWidth="320">
+      <tabs>
+        <Tab text="Participants">
+          <content>
+            <ListView />
+          </content>
+        </Tab>
+        <Tab text="Files">
+          <content>
+            <VBox spacing="8" padding="8">
+              <Button text="Verify Identity" onAction="#verifyFilesAccess" />
+              <ListView />
+            </VBox>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </right>
+</BorderPane>

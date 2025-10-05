@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:sqlite:${user.home}/bdpolice/portal.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 210MB
+
+app:
+  jwt-secret: change-this-secret-in-prod
+  message-ttl-seconds: 600
+  upload-dir: ${user.home}/bdpolice/uploads

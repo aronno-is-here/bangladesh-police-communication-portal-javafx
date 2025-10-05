@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" spacing="12" padding="16">
+  <children>
+    <Label text="Files Management" styleClass="pageTitle" />
+    <HBox spacing="8">
+      <TextField promptText="Search files, rooms, or officers..." HBox.hgrow="ALWAYS" />
+      <ChoiceBox>
+        <items><FXCollections fx:factory="observableArrayList"><String fx:value="All Rooms"/><String fx:value="Active"/><String fx:value="Completed"/></FXCollections></items>
+      </ChoiceBox>
+      <ChoiceBox>
+        <items><FXCollections fx:factory="observableArrayList"><String fx:value="All Types"/><String fx:value="Images"/><String fx:value="Videos"/><String fx:value="Documents"/><String fx:value="Audio"/></FXCollections></items>
+      </ChoiceBox>
+    </HBox>
+    <TableView>
+      <columns>
+        <TableColumn text="File" prefWidth="260" />
+        <TableColumn text="Room" prefWidth="160" />
+        <TableColumn text="Uploaded By" prefWidth="160" />
+        <TableColumn text="Date" prefWidth="160" />
+        <TableColumn text="Type" prefWidth="120" />
+        <TableColumn text="Size" prefWidth="100" />
+        <TableColumn text="Actions" prefWidth="160" />
+      </columns>
+    </TableView>
+  </children>
+</VBox>
